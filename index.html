@@ -13,37 +13,31 @@
       margin: 0;
       padding: 0;
     }
-
-    header {
+    header, .bottom-header {
       background-color: #074430;
       color: white;
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
-
-    header img {
+    header img, .bottom-header img {
       height: 120px;
       width: auto;
-      margin-right: 2.5rem;
     }
-
-    .header-text {
+    .header-text, .bottom-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-
     .header-text h1 {
       margin: 0;
       font-size: 2.2rem;
     }
-
     .header-text p {
       margin: 0.4rem 0 0 0;
       font-size: 1.2rem;
     }
-
     main {
       max-width: 800px;
       margin: 2rem auto;
@@ -52,18 +46,46 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
+    section {
+      margin-top: 2rem;
+    }
+    a.section-link {
+      color: #074430;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .social-links img {
+      height: 24px;
+      width: auto;
+      margin-right: 0.5rem;
+    }
     footer {
       text-align: center;
       font-size: 0.9em;
       color: #777;
-      margin-top: 4rem;
-      padding-bottom: 1rem;
+      margin: 1rem 0;
     }
   </style>
+  <script>
+    function copyEmail() {
+      navigator.clipboard.writeText('transportforarmadale@gmail.com');
+      alert('Email address copied to clipboard');
+    }
+  </script>
 </head>
 <body>
-
   <header>
     <img src="assets/logo.png" alt="Transport for Armadale Logo" />
     <div class="header-text">
@@ -72,26 +94,38 @@
     </div>
   </header>
 
- <main>
-  <h2>Welcome</h2>
-  <p>This is the placeholder site for Transport for Armadale (TFA). We're working to improve bus stops, transit access, and local transport information in and around Armadale, West Lothian.</p>
+  <main>
+    <h2>Welcome</h2>
+    <p>This is the placeholder site for Transport for Armadale (TFA). We're working to improve bus stops, transit access, and local transport information in and around Armadale, West Lothian.</p>
 
-  <p>Check back soon for route guides, stop maps, volunteer info, and more.</p>
+    <p>Check back soon for route guides, stop maps, volunteer info, and more.</p>
 
-  <section style="margin-top: 3rem;">
-    <h2><a href="recent-work.html" style="color: #074430; text-decoration: none;">🔧 Recent Work</a></h2>
-    <p>A record of our completed projects: cleaned stops, timetable fixes, accessibility improvements, and more.</p>
-  </section>
+    <section>
+      <h2><a href="recent-work.html" class="section-link">🔧 Recent Work</a></h2>
+      <p>A record of our completed projects: cleaned stops, timetable fixes, accessibility improvements, and more.</p>
+    </section>
 
-  <section style="margin-top: 2rem;">
-    <h2><a href="routes.html" style="color: #074430; text-decoration: none;">🗺️ Timetables & Route Maps</a></h2>
-    <p>Find information on local public transport in Armadale and West Lothian.</p>
-  </section>
-</main>
+    <section>
+      <h2><a href="routes.html" class="section-link">🗺️ Routes & Timetables</a></h2>
+      <p>Find information on local public transport in Armadale and West Lothian.</p>
+    </section>
+  </main>
+
+  <div class="bottom-header">
+    <div class="social-links">
+      <a href="https://twitter.com/tfArmadale" target="_blank">
+        <img src="assets/twitter.png" alt="Twitter Logo" />
+        @tfArmadale
+      </a>
+      <a href="#" onclick="copyEmail()">
+        <img src="assets/gmail.png" alt="Email Logo" />
+        transportforarmadale@gmail.com
+      </a>
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 Transport for Armadale — Community-led transit info
   </footer>
-
 </body>
 </html>
