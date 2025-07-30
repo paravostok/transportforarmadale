@@ -41,18 +41,26 @@
     main {
       max-width: 800px;
       margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 0 1rem;
     }
-    h1.page-title {
+    section {
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .interactive {
+      background: white;
+    }
+    .route-maps {
+      background: #ffffff;
+    }
+    .timetables {
+      background: #fafafa;
+    }
+    h2 {
       color: #074430;
       margin-top: 0;
-    }
-    a {
-      color: #074430;
-      text-decoration: none;
     }
     ul {
       list-style: none;
@@ -60,6 +68,10 @@
     }
     ul li {
       margin: 0.6rem 0;
+    }
+    a {
+      color: #074430;
+      text-decoration: none;
     }
     footer {
       text-align: center;
@@ -80,27 +92,46 @@
   </header>
 
   <main>
-    <h1 class="page-title">Routes &amp; Timetables</h1>
-    <p>This page hosts downloads, diagrams, and guides for local bus routes in Armadale and West Lothian.</p>
+    <!-- interactive map section -->
+    <section class="interactive">
+      <h2>Interactive Map (WIP)</h2>
+      <p>🗺️ This section will host an interactive route map soon.</p>
+    </section>
 
-    <h2>Armadale services</h2>
-    <ul>
-      <li>🚌 <a href="https://www.lothianbuses.com/wp-content/uploads/2024/02/rX18_24_03_24_WEB.pdf" target="_blank">Lothian Country service X18 (Whitburn–Edinburgh) Schedule (PDF)</a></li>
-      <li>🚌 <a href="https://www.westlothian.gov.uk/media/59304/LBS-6-Timetable/pdf/LBS_6_Timetable_qon79yl6lim8.pdf" target="_blank">SD Travel service 6 (Whitburn–Avonbridge) Schedule (PDF)</a></li>
-      <li>🚌 <a href="https://www.westlothian.gov.uk/media/59104/LBS-21-Timetable/pdf/LBS_21_Timetable.pdf" target="_blank">SD Travel service 21 (Boghall–Blackridge) Schedule (PDF)</a></li>
-      <li>🚌 <a href="https://www.mcgillsscotlandeast.co.uk/services/MBLB/29?date=2025-07-30&direction=outbound" target="_blank">Midland Bluebird service 29 (Falkirk–Avonbridge/Bathgate) Schedule (PDF)</a></li>
-      <li>🚆 <a href="https://www.scotrail.co.uk/plan-your-journey/stations-and-facilities/arm" target="_blank">Armadale Railway Station info & live timetable</a></li>
-      <li>🗺️ <a href="#">Interactive route map (coming soon)</a></li>
-    </ul>
+    <!-- route maps section -->
+    <section class="route-maps">
+      <h2>Route Maps</h2>
 
-    <h2>West Lothian wide</h2>
-    <ul>
-      <li>🚌 <a href="https://www.stuartscoaches.co.uk/bus-routes/" target="_blank">Stuart's of Carluke Travel Routes (Website)</a></li>
-      <li>🚌 <a href="https://www.travelinescotland.com/timetables?operatorCode=SDTR&servicesHeader=SD%20Travel" target="_blank">SD Travel Routes (Website)</a></li>
-      <li>🚌 <a href="https://www.lothianbuses.com/our-services/lothian-country/" target="_blank">Lothian Country Route Map (Website)</a></li>
-      <li>🚌 <a href="assets/lothiancountrymap.pdf" target="_blank">Lothian Country Route Map (PDF)</a></li>
-      <li>🗺️ <a href="#">Interactive route map (coming soon)</a></li>
-    </ul>
+      <h3>Armadale</h3>
+      <ul>
+        <li>🚌 <a href="https://www.lothianbuses.com/our-services/lothian-country/" target="_blank">Lothian Country Route Map (Website)</a></li>
+        <li>🚌 <a href="assets/lothiancountrymap.pdf" target="_blank">Lothian Country Route Map (PDF)</a></li>
+      </ul>
+
+      <h3>West Lothian</h3>
+      <ul>
+        <li>🚌 <a href="https://www.stuartscoaches.co.uk/bus-routes/" target="_blank">Stuart's of Carluke Travel Routes (Website)</a></li>
+        <li>🚌 <a href="https://www.travelinescotland.com/timetables?operatorCode=SDTR&servicesHeader=SD%20Travel" target="_blank">SD Travel Routes (Website)</a></li>
+      </ul>
+    </section>
+
+    <!-- timetables section -->
+    <section class="timetables">
+      <h2>Timetables</h2>
+
+      <h3>Armadale</h3>
+      <ul>
+        <li>🚌 <a href="https://www.lothianbuses.com/wp-content/uploads/2024/02/rX18_24_03_24_WEB.pdf" target="_blank">Lothian Country service X18 Schedule (PDF)</a></li>
+        <li>🚌 <a href="https://www.westlothian.gov.uk/media/59304/LBS-6-Timetable/pdf/LBS_6_Timetable_qon79yl6lim8.pdf" target="_blank">SD Travel service 6 Schedule (PDF)</a></li>
+        <li>🚆 <a href="https://www.scotrail.co.uk/plan-your-journey/stations-and-facilities/arm" target="_blank">Armadale Railway Station info &amp; live timetable</a></li>
+      </ul>
+
+      <h3>West Lothian</h3>
+      <ul>
+        <li>🚌 <a href="https://www.westlothian.gov.uk/media/59104/LBS-21-Timetable/pdf/LBS_21_Timetable.pdf" target="_blank">SD Travel service 21 Schedule (PDF)</a></li>
+        <li>🚌 <a href="https://www.mcgillsscotlandeast.co.uk/services/MBLB/29?date=2025-07-30&direction=outbound" target="_blank">Midland Bluebird service 29 Schedule (PDF)</a></li>
+      </ul>
+    </section>
 
     <p><a href="index.html">&larr; Back to homepage</a></p>
   </main>
