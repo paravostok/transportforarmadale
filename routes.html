@@ -39,7 +39,7 @@
       font-size: 1.2rem;
     }
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -48,19 +48,27 @@
       padding: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .interactive {
-      background: white;
-    }
-    .route-maps {
       background: #ffffff;
-    }
-    .timetables {
-      background: #fafafa;
     }
     h2 {
       color: #074430;
       margin-top: 0;
+    }
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin: 0.5rem 0 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    h3 {
+      color: #074430;
+      margin-bottom: 0.5rem;
     }
     ul {
       list-style: none;
@@ -72,6 +80,9 @@
     a {
       color: #074430;
       text-decoration: none;
+    }
+    p.back-link {
+      margin: 1rem 0;
     }
     footer {
       text-align: center;
@@ -92,59 +103,71 @@
   </header>
 
   <main>
-    <!-- interactive map section -->
-    <section class="interactive">
-      <h2>Interactive Map (WIP)</h2>
-      <p>🗺️ This section will host an interactive route map soon.</p>
+    <!-- interactive map section with dropdown -->
+    <section>
+      <h2>Live Bus Maps</h2>
+      <label for="operator">Choose an operator:</label>
+      <select id="operator" onchange="updateMap()">
+        <option value="https://bustimes.org/operators/lothian-country-buses/map">Lothian Country</option>
+        <option value="https://bustimes.org/services/801-edinburgh-airport-broxburn-uphall-deans-road-e#map">Bright Bus</option>
+        <option value="https://bustimes.org/services/x39-livingston-broxburn-newbridge-barnton-lochend#map">Eastern Scottish (X39)</option>
+        <option value="https://bustimes.org/services/090-glasgow-edinburgh#map">FlixBus (090)</option>
+        <option value="https://bustimes.org/operators/midland-bluebird/map">Midland Bluebird</option>
+        <option value="https://bustimes.org/operators/stagecoach-east-scotland/map">Stagecoach East Scotland</option>
+        <option value="https://bustimes.org/operators/stuarts-coaches/map">Stuart's of Carluke</option>
+        <option value="https://bustimes.org/operators/sd-travel/map">SD Travel</option>
+      </select>
+      <iframe id="mapFrame" src="https://bustimes.org/operators/lothian-country-buses/map"></iframe>
     </section>
 
     <!-- route maps section -->
-    <section class="route-maps">
+    <section>
       <h2>Route Maps</h2>
-
       <h3>Armadale</h3>
       <ul>
         <li>🚌 <a href="https://www.lothianbuses.com/our-services/lothian-country/" target="_blank">Lothian Country Route Map (Website)</a></li>
         <li>🚌 <a href="assets/lothiancountrymap.pdf" target="_blank">Lothian Country Route Map (PDF)</a></li>
       </ul>
-
       <h3>West Lothian</h3>
       <ul>
-         <li>🚌 <a href="https://www.lothianbuses.com/our-services/lothian-country/" target="_blank">Lothian Country Route Map (Website)</a></li>
-        <li>🚌 <a href="assets/lothiancountrymap.pdf" target="_blank">Lothian Country Route Map (PDF)</a></li>
         <li>🚌 <a href="https://www.stuartscoaches.co.uk/bus-routes/" target="_blank">Stuart's of Carluke Travel Routes (Website)</a></li>
         <li>🚌 <a href="https://www.travelinescotland.com/timetables?operatorCode=SDTR&servicesHeader=SD%20Travel" target="_blank">SD Travel Routes (Website)</a></li>
+        <li>🚌 <a href="https://www.lothianbuses.com/our-services/lothian-country/" target="_blank">Lothian Country Route Map (Website)</a></li>
+        <li>🚌 <a href="assets/lothiancountrymap.pdf" target="_blank">Lothian Country Route Map (PDF)</a></li>
       </ul>
     </section>
 
     <!-- timetables section -->
-    <section class="timetables">
+    <section>
       <h2>Timetables</h2>
-
       <h3>Armadale</h3>
       <ul>
         <li>🚌 <a href="https://www.lothianbuses.com/wp-content/uploads/2024/02/rX18_24_03_24_WEB.pdf" target="_blank">Lothian Country service X18 Schedule (PDF)</a></li>
         <li>🚌 <a href="https://www.westlothian.gov.uk/media/59304/LBS-6-Timetable/pdf/LBS_6_Timetable_qon79yl6lim8.pdf" target="_blank">SD Travel service 6 Schedule (PDF)</a></li>
         <li>🚆 <a href="https://www.scotrail.co.uk/plan-your-journey/stations-and-facilities/arm" target="_blank">Armadale Railway Station info &amp; live timetable</a></li>
         <li>🚌 <a href="https://www.westlothian.gov.uk/media/59104/LBS-21-Timetable/pdf/LBS_21_Timetable.pdf" target="_blank">SD Travel service 21 Schedule (PDF)</a></li>
-        <li>🚌 <a href="https://www.mcgillsscotlandeast.co.uk/services/MBLB/29?date=2025-07-30&direction=outbound" target="_blank">Midland Bluebird service 29 Schedule (PDF)</a></li>
+        <li>🚌 <a href="https://www.mcgillsscotlandeast.co.uk/services/MBLB/29?date=2025-07-30&amp;direction=outbound" target="_blank">Midland Bluebird service 29 Schedule (PDF)</a></li>
       </ul>
-
       <h3>West Lothian</h3>
       <ul>
         <li>🚌 <a href="https://www.lothianbuses.com/our-services/lothian-country/#timetables" target="_blank">Lothian Country Timetable</a></li>
         <li>🚌 <a href="https://www.citylink.co.uk/timetables-service-updates/glasgow-livingston-edinburgh-airport/" target="_blank">Citylink 902 Timetable</a></li>
         <li>🚌 <a href="https://www.stuartscoaches.co.uk/34-forth-lanark/" target="_blank">Stuart's of Carluke 43 Timetable</a></li>
-         <li>🚌 <a href="https://www.stuartscoaches.co.uk/23-shotts-harthill-whitburn/" target="_blank">Stuart's of Carluke 23 Timetable</a></li>
+        <li>🚌 <a href="https://www.stuartscoaches.co.uk/23-shotts-harthill-whitburn/" target="_blank">Stuart's of Carluke 23 Timetable</a></li>
       </ul>
     </section>
 
-    <p><a href="index.html">&larr; Back to homepage</a></p>
+    <p class="back-link"><a href="index.html">&larr; Back to homepage</a></p>
   </main>
 
   <footer>
     &copy; 2025 Transport for Armadale — Community-led transit info
   </footer>
 
+  <script>
+    function updateMap() {
+      document.getElementById('mapFrame').src = document.getElementById('operator').value;
+    }
+  </script>
 </body>
 </html>
